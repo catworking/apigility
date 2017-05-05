@@ -117,3 +117,12 @@ ApigilityAd
                 ├── PositionResourceFactory.php
                 └── PositionResource.php
 ```
+
+## 如何了解一个组件的具体功能
+现有的组件是暂时是没有文档的，每个组件的文档编写已经纳入工作计划。
+
+在文档完善之前，开发者需要通过阅读代码来了解一个组件的具体功能。参考上一节中的内容，可以知道这其实并不算是一件困难的事。
+每个组件都只有3种主要代码：
+- Doctrine 实体，用来生成数据库表的
+- Service 类，是具体的业务逻辑，主要是通过Doctrine处理数据，主要是增删查改逻辑，也会有一些额外的逻辑。
+- Apigility RESTFul 接口类，定义了RESTFul资源，及其相关的Method，这些接口类调用Service类来执行具体的任务。
